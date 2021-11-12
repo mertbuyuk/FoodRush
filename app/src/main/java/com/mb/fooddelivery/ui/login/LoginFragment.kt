@@ -1,4 +1,4 @@
-package com.mb.fooddelivery.ui
+package com.mb.fooddelivery.ui.login
 
 import android.os.Bundle
 import android.util.Log

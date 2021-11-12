@@ -5,6 +5,6 @@
     app:startDestination="@id/loginFragment">
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.mb.fooddelivery.ui.LoginFragment"
+        android:name="com.mb.fooddelivery.ui.login.LoginFragment"
         android:label="LoginFragment" />
 </navigation>

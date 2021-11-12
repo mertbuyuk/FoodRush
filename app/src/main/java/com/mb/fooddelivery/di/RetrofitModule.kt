@@ -3,6 +3,8 @@ package com.mb.fooddelivery.di
 import com.google.gson.Gson
 import com.mb.fooddelivery.BuildConfig
 import com.mb.fooddelivery.model.local.LocalDataSource
+import com.mb.fooddelivery.model.remote.AuthApiService
+import com.mb.fooddelivery.model.remote.AuthDataSource
 import com.mb.fooddelivery.model.remote.FoodApiService
 import com.mb.fooddelivery.model.remote.RemoteDataSource
 import com.mb.fooddelivery.utils.Constant.BASE_URL
@@ -25,10 +27,10 @@ class RetrofitModule{
         return retrofit.create(FoodApiService::class.java)
     }
 
-  /*  @Provides
-    fun provideAuthApiService(@AuthRetrofit retrofit: Retrofit): AuthAPIService {
-        return retrofit.create(AuthAPIService::class.java)
-    }*/
+    @Provides
+    fun provideAuthApiService(@AuthRetrofit retrofit: Retrofit): AuthApiService {
+        return retrofit.create(AuthApiService::class.java)
+    }
 
     @Provides
     @NoAuthRetrofit
@@ -94,12 +96,12 @@ class RetrofitModule{
         return RemoteDataSource(apiService)
     }
 
-    /*@Provides
+    @Provides
     fun provideAuthRemoteDataSource(
-        authAPIService: AuthAPIService,
-    ): AuthRemoteDataSource {
-        return AuthRemoteDataSource(authAPIService)
-    }*/
+        authAPIService: AuthApiService,
+    ): AuthDataSource {
+        return AuthDataSource(authAPIService)
+    }
 
     @Provides
     fun provideEndPoint(): EndPoint {

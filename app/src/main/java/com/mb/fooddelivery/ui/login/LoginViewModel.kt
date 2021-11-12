@@ -1,4 +1,4 @@
-package com.mb.fooddelivery.ui
+package com.mb.fooddelivery.ui.login
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
