@@ -7,6 +7,8 @@ import retrofit2.http.Body
 import retrofit2.http.POST
 
 interface FoodApiService {
+
     @POST("public/login")
     suspend fun login(@Body request: LoginRequest): Response<LoginResponse>
+
 }

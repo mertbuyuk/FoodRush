@@ -1,5 +1,6 @@
 package com.mb.fooddelivery.utils
 
+import android.util.Log
 import retrofit2.Response
 
 abstract class BaseDataSource {
@@ -11,6 +12,7 @@ abstract class BaseDataSource {
                 return Resource.success(body)
             }
         }
+        Log.i("Mert",response.body().toString())
         val errorBody = response.errorBody().toString()
         return error("${response.code()} - $errorBody")
     }
