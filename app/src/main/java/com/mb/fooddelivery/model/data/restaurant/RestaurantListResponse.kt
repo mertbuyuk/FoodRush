@@ -18,9 +18,9 @@ data class RestaurantProps(
     val information : String,
     @SerializedName("minDeliveryTime")
     val minDeliveryTime : String,
-    @SerializedName("id")
+    @SerializedName("minDeliveryFee")
     val minDeliveryFee : String,
-    @SerializedName("id")
+    @SerializedName("imageUrl")
     val imageUrl : String,
 
 )

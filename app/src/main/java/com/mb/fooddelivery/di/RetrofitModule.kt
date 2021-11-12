@@ -37,10 +37,9 @@ class RetrofitModule{
     fun provideRetrofit(
         noAuthOkHttpClient: NoAuthOkHttpClient,
         gson: Gson,
-        endPoint: EndPoint
     ): Retrofit {
         return Retrofit.Builder()
-            .baseUrl(endPoint.url)
+            .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create(gson))
             .client(noAuthOkHttpClient.okHttpClient)
             .build()
@@ -60,11 +59,10 @@ class RetrofitModule{
     @AuthRetrofit
     fun provideAuthRetrofit(
         authOkHttpClient: AuthOkHttpClient,
-        gson: Gson,
-        endPoint: EndPoint
+        gson: Gson
     ): Retrofit {
         return Retrofit.Builder()
-            .baseUrl(endPoint.url)
+            .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create(gson))
             .client(authOkHttpClient.okHttpClient)
             .build()
@@ -103,11 +101,6 @@ class RetrofitModule{
         return AuthDataSource(authAPIService)
     }
 
-    @Provides
-    fun provideEndPoint(): EndPoint {
-        return EndPoint("https://food-delivery-testt.herokuapp.com/")
-    }
-
     private fun provideAuthOkHttpClient(okHttpClient: OkHttpClient): AuthOkHttpClient {
         return AuthOkHttpClient(okHttpClient)
     }
@@ -116,8 +109,6 @@ class RetrofitModule{
         return NoAuthOkHttpClient(okHttpClient)
     }
 }
-
-data class EndPoint(val url: String)
 
 data class AuthOkHttpClient(val okHttpClient: OkHttpClient)
 

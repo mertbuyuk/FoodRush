@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.mb.fooddelivery.databinding.FragmentLoginBinding
 import com.mb.fooddelivery.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
@@ -46,6 +47,8 @@ class LoginFragment : Fragment() {
                     }
                     Resource.Status.SUCCESS ->{
                         Log.i("Mert","Başarılı")
+                        val action = LoginFragmentDirections.actionLoginFragmentToRestaurantListFragment()
+                        findNavController().navigate(action)
                     }
                     Resource.Status.ERROR ->{
                         Log.i("Mert","Error")
