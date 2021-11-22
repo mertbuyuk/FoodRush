@@ -1,37 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="180dp"
-    android:layout_height="280dp"
+    android:layout_height="250dp"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardBackgroundColor="#B3C9D3">
+    >
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="250dp"
         android:orientation="vertical"
         android:gravity="center"
+        android:background="#B3C9D3"
+        android:layout_marginLeft="16dp"
         >
 
         <ImageView
             android:id="@+id/itemRestaurantsPhoto"
             android:layout_width="180dp"
-            android:layout_height="180dp"
+            android:layout_height="150dp"
+            android:padding="32dp"
 
             />
         <TextView
             android:id="@+id/itemRestaurantsName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            tools:text="Burger King"
+            android:text="Burger King"
             />
 
         <TextView
             android:id="@+id/itemRestaurantsLoc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="16dp"
             tools:text="Ankara"
             />
     </LinearLayout>
