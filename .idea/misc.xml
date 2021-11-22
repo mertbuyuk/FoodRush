@@ -3,9 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/FoodDelivery/app/src/main/res/drawable/btn_background.xml" value="0.2890625" />
+        <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/FoodDelivery/app/src/main/res/drawable/layout_background.xml" value="0.2890625" />
         <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/activity_main.xml" value="0.18614130434782608" />
-        <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/fragment_login.xml" value="0.192481884057971" />
+        <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/fragment_login.xml" value="0.25" />
         <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/fragment_restaurant_list.xml" value="0.24320652173913043" />
+        <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/item_categories.xml" value="0.15217391304347827" />
+        <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/item_resphoto.xml" value="0.2223731884057971" />
+        <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/item_restaurants.xml" value="0.21693840579710144" />
       </map>
     </option>
   </component>

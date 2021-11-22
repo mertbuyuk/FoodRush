@@ -36,8 +36,8 @@ class LoginFragment : Fragment() {
 
     private fun loginRequest() {
         binding.apply {
-            val email = edtTxtUsername.text.toString()
-            val password = edtTxtPassword.text.toString()
+            val email = edtTxtUsername.editText?.text.toString()
+            val password = edtTxtPassword.editText?.text.toString()
 
         viewModel.login(email,password).observe(
             viewLifecycleOwner, {

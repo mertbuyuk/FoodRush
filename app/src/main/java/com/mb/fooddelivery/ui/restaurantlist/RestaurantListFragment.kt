@@ -33,7 +33,7 @@ class RestaurantListFragment : Fragment() {
     private fun getRestaurantList() {
         viewModel.getAllRestaurants().observe(viewLifecycleOwner,{
             when(it.status){
-                Resource.Status.SUCCESS -> Log.i("Mert","succes -> ${it.data}")
+                Resource.Status.SUCCESS -> Log.i("Mert","succes -> ${it.data?.restaurantList}")
             }
         })
     }
