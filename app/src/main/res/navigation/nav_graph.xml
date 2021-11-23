@@ -14,7 +14,7 @@
     </fragment>
     <fragment
         android:id="@+id/restaurantListFragment"
-        android:name="com.mb.fooddelivery.ui.restaurantlist.RestaurantListFragment"
+        android:name="com.mb.fooddelivery.ui.mainpage.restaurantlist.RestaurantListFragment"
         android:label="fragment_restaurant_list"
         tools:layout="@layout/fragment_restaurant_list" />
 </navigation>

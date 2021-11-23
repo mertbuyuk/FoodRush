@@ -12,7 +12,7 @@ abstract class BaseDataSource {
                 return Resource.success(body)
             }
         }
-        Log.i("Mert",response.body().toString())
+
         val errorBody = response.errorBody().toString()
         return error("${response.code()} - $errorBody")
     }

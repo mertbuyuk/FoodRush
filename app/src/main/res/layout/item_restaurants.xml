@@ -13,7 +13,7 @@
         android:orientation="vertical"
         android:gravity="center"
         android:background="#B3C9D3"
-        android:layout_marginLeft="16dp"
+        android:layout_marginLeft="8dp"
         >
 
         <ImageView

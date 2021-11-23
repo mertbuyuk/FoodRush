@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".ui.restaurantlist.RestaurantListFragment"
+    tools:context=".ui.mainpage.restaurantlist.RestaurantListFragment"
     android:padding="16dp">
 
     <LinearLayout
@@ -14,7 +14,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-    <SearchView
+    <androidx.appcompat.widget.SearchView
         android:id="@+id/searchView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,14 +22,13 @@
         android:backgroundTint="#DAD5D5"
         />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerResPhoto"
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager2"
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:layout_marginTop="24dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:orientation="horizontal"
-        tools:listitem="@layout/item_resphoto"
         />
 
     <TextView
@@ -42,7 +41,6 @@
         />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:padding="4dp"
         android:id="@+id/recyclerCategories"
         android:layout_width="match_parent"
         android:layout_height="88dp"

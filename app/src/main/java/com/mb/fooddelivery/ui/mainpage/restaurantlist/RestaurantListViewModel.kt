@@ -1,4 +1,4 @@
-package com.mb.fooddelivery.ui.restaurantlist
+package com.mb.fooddelivery.ui.mainpage.restaurantlist
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel

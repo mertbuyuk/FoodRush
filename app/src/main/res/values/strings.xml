@@ -7,4 +7,19 @@
     <string name="password">Password</string>
     <string name="categories">Categories</string>
     <string name="restaurants">Restaurants</string>
+
+    <string-array name="Cuisines">
+        <item>Pizza</item>
+        <item>Burger</item>
+        <item>Bakery</item>
+        <item>Dessert</item>
+        <item>Worldwide</item>
+        <item>Homemade</item>
+        <item>Breakfast</item>
+        <item>Kebab</item>
+        <item>Pasta - Salad</item>
+        <item>Doner</item>
+        <item>Seafood</item>
+        <item>Eastern Kitchen</item>
+    </string-array>
 </resources>

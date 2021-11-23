@@ -1,4 +1,4 @@
-package com.mb.fooddelivery.ui.restaurantlist
+package com.mb.fooddelivery.ui.mainpage.restaurantlist
 
 import android.os.Bundle
 import android.util.Log
@@ -9,7 +9,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.mb.fooddelivery.R
 import com.mb.fooddelivery.databinding.FragmentRestaurantListBinding
+import com.mb.fooddelivery.model.data.categories.CategoriesCuisine
+import com.mb.fooddelivery.model.data.categories.getCuisineList
 import com.mb.fooddelivery.model.data.restaurant.RestaurantProps
+import com.mb.fooddelivery.ui.mainpage.categories.CategoriesListAdapter
+import com.mb.fooddelivery.ui.mainpage.viewpager.ViewPagerAdapter
 import com.mb.fooddelivery.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -18,7 +22,10 @@ class RestaurantListFragment : Fragment() {
     private lateinit var binding  : FragmentRestaurantListBinding
     private val viewModel : RestaurantListViewModel by viewModels()
 
+    private var categoryList : MutableList<CategoriesCuisine> = mutableListOf()
     private val restaurantAdapter = RestaurantListAdapter()
+    private val categoryAdapter = CategoriesListAdapter()
+    private val sliderAdapter = ViewPagerAdapter()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,8 +38,29 @@ class RestaurantListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.recyclerRestaurants.adapter = restaurantAdapter
+        binding.recyclerCategories.adapter = categoryAdapter
 
+        initViewPager()
         getRestaurantList()
+        getCategories()
+
+    }
+
+    private fun initViewPager() {
+        var list = mutableListOf<Int>()
+        list.add(R.drawable.burgerking_image)
+        list.add(R.drawable.dominos_image)
+        list.add(R.drawable.mcdonalds_image)
+
+        sliderAdapter.setContentList(list)
+
+        binding.viewPager2.adapter = sliderAdapter
+
+    }
+
+    private fun getCategories() {
+        categoryList = getCuisineList()
+        categoryAdapter.submitList(categoryList)
     }
 
     private fun getRestaurantList() {
@@ -45,6 +73,5 @@ class RestaurantListFragment : Fragment() {
 
     private fun onSucces(restaurantList: List<RestaurantProps>?) {
         restaurantAdapter.submitList(restaurantList)
-        Log.i("Mert",(restaurantList).toString())
     }
 }
