@@ -8,7 +8,9 @@
     android:layout_marginLeft="8dp"
     android:layout_marginTop="4dp"
     android:background="@drawable/btn_background"
-    android:id="@+id/categoryItemLayout">
+    android:id="@+id/categoryItemLayout"
+    android:clickable="true"
+    >
 
     <ImageView
         android:id="@+id/itemImageCategories"
