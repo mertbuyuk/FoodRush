@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.mb.fooddelivery.R
 import com.mb.fooddelivery.databinding.FragmentRestaurantListBinding
 import com.mb.fooddelivery.model.data.categories.CategoriesCuisine
@@ -45,21 +46,10 @@ class RestaurantListFragment : Fragment() {
         getRestaurantList()
         getCategories()
 
-        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
-            androidx.appcompat.widget.SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(p0: String): Boolean {
-                return false
-            }
-
-            override fun onQueryTextChange(query: String): Boolean {
-
-                searchEvent(query)
-                return true
-            }
-
-        })
-
-
+        binding.searchView.setOnClickListener {
+            val action = RestaurantListFragmentDirections.actionRestaurantListFragmentToRestaurantSearchFragment(viewModel.restaurantList!!.toTypedArray())
+            findNavController().navigate(action)
+        }
     }
 
     private fun initViewPager() {
@@ -89,11 +79,5 @@ class RestaurantListFragment : Fragment() {
     private fun onSucces(restaurantList: List<RestaurantProps>?) {
         restaurantAdapter.submitList(restaurantList)
         viewModel.restaurantList = restaurantList
-    }
-
-    private fun searchEvent(query: String) {
-
-        val filteredList = viewModel.searchRestaurant(query)
-        restaurantAdapter.submitList(filteredList)
     }
 }

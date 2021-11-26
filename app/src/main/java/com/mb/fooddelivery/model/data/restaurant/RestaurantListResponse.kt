@@ -1,12 +1,16 @@
 package com.mb.fooddelivery.model.data.restaurant
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
+
 
 data class RestaurantListResponse(
     @SerializedName("responseBody")
     val restaurantList: List<RestaurantProps>
 )
 
+@Parcelize
 data class RestaurantProps(
     @SerializedName("id")
     val id : Int,
@@ -23,4 +27,4 @@ data class RestaurantProps(
     @SerializedName("imageUrl")
     val imageUrl : String,
 
-)
+) : Parcelable

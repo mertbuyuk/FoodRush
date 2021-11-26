@@ -8,10 +8,12 @@
         <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/activity_main.xml" value="0.18614130434782608" />
         <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/fragment_login.xml" value="0.25" />
         <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/fragment_restaurant_list.xml" value="0.25" />
+        <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/fragment_restaurant_search.xml" value="0.19384057971014493" />
         <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/item_categories.xml" value="0.33" />
         <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/item_resphoto.xml" value="0.2223731884057971" />
         <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/item_restaurants.xml" value="0.21693840579710144" />
         <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/item_slide.xml" value="0.2056159420289855" />
+        <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/vertical_restaurant_item.xml" value="0.19384057971014493" />
       </map>
     </option>
   </component>

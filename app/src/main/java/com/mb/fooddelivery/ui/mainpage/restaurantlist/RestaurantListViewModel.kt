@@ -16,19 +16,4 @@ class RestaurantListViewModel @Inject constructor(private val apiRepository: Api
     var restaurantList : List<RestaurantProps>? = null
 
     fun getAllRestaurants() : LiveData<Resource<RestaurantListResponse>> = apiRepository.getRestaurants()
-
-    fun searchRestaurant(text : String) : List<RestaurantProps>?{
-
-        if (text.isNullOrEmpty()){
-            return restaurantList;
-        }
-        val filterList : MutableList<RestaurantProps> = mutableListOf()
-
-        restaurantList?.forEach {
-            if (it.name.lowercase().contains(text.trim())){
-                filterList.add(it)
-            }
-        }
-        return  filterList
-    }
 }

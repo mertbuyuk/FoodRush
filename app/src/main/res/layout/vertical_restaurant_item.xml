@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="16dp"
+    android:clickable="true"
+    android:background="#94B1BD"
+    android:layout_margin="8dp"
+    >
+
+    <TextView
+        android:id="@+id/txtVertRest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/imgVertRest"
+        app:layout_constraintEnd_toStartOf="@+id/imgVertRest"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imgVertRest"
+        app:layout_constraintVertical_bias="0.297"
+        tools:text="Burger King" />
+
+    <TextView
+        android:id="@+id/txtVertCuisine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/imgVertRest"
+        app:layout_constraintEnd_toEndOf="@+id/txtVertRest"
+        app:layout_constraintStart_toStartOf="@+id/txtVertRest"
+        app:layout_constraintTop_toTopOf="@+id/txtVertRest"
+        tools:text="Burger" />
+
+    <ImageView
+        android:id="@+id/imgVertRest"
+        android:layout_width="140dp"
+        android:layout_height="120dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src = "@drawable/ic_launcher_background"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
