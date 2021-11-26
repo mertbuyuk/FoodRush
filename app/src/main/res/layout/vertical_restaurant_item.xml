@@ -6,8 +6,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:padding="16dp"
     android:clickable="true"
-    android:background="#94B1BD"
+    android:focusable="true"
+    android:background="@drawable/vertical_item_background"
     android:layout_margin="8dp"
+
     >
 
     <TextView

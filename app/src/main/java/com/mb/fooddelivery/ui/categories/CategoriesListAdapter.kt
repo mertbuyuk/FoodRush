@@ -1,4 +1,4 @@
-package com.mb.fooddelivery.ui.mainpage.categories
+package com.mb.fooddelivery.ui.categories
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.mb.fooddelivery.databinding.ItemCategoriesBinding
 import com.mb.fooddelivery.model.data.categories.CategoriesCuisine
-import com.mb.fooddelivery.model.data.restaurant.RestaurantProps
 
 class CategoriesListAdapter : ListAdapter<CategoriesCuisine,CategoriesListAdapter.CategoryHolder>(DIFF_CALLBACK) {
   /*  val categories = listOf(

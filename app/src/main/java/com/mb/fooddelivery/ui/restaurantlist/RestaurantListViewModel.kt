@@ -1,6 +1,5 @@
-package com.mb.fooddelivery.ui.mainpage.restaurantlist
+package com.mb.fooddelivery.ui.restaurantlist
 
-import android.content.RestrictionEntry
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.mb.fooddelivery.model.ApiRepository

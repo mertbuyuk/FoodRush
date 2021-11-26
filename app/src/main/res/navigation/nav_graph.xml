@@ -14,21 +14,32 @@
     </fragment>
     <fragment
         android:id="@+id/restaurantListFragment"
-        android:name="com.mb.fooddelivery.ui.mainpage.restaurantlist.RestaurantListFragment"
+        android:name="com.mb.fooddelivery.ui.restaurantlist.RestaurantListFragment"
         android:label="fragment_restaurant_list"
         tools:layout="@layout/fragment_restaurant_list" >
         <action
             android:id="@+id/action_restaurantListFragment_to_restaurantSearchFragment"
             app:destination="@id/restaurantSearchFragment" />
+        <action
+            android:id="@+id/action_restaurantListFragment_to_restaurantMealFragment"
+            app:destination="@id/restaurantMealFragment" />
     </fragment>
     <fragment
         android:id="@+id/restaurantSearchFragment"
-        android:name="com.mb.fooddelivery.ui.mainpage.restaurantlist.RestaurantSearchFragment"
+        android:name="com.mb.fooddelivery.ui.restaurantlist.RestaurantSearchFragment"
         android:label="fragment_restaurant_search"
         tools:layout="@layout/fragment_restaurant_search" >
 
         <argument
             android:name="restaurantProps"
             app:argType="com.mb.fooddelivery.model.data.restaurant.RestaurantProps[]" />
+        <action
+            android:id="@+id/action_restaurantSearchFragment_to_restaurantMealFragment"
+            app:destination="@id/restaurantMealFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/restaurantMealFragment"
+        android:name="com.mb.fooddelivery.ui.restaurantmeals.RestaurantMealFragment"
+        android:label="fragment_restaurant_meal"
+        tools:layout="@layout/fragment_restaurant_meal" />
 </navigation>

@@ -1,4 +1,4 @@
-package com.mb.fooddelivery.ui.mainpage.restaurantlist
+package com.mb.fooddelivery.ui.restaurantlist
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,26 +6,26 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.mb.fooddelivery.databinding.ItemRestaurantsBinding
+import com.mb.fooddelivery.databinding.VerticalRestaurantItemBinding
 import com.mb.fooddelivery.model.data.restaurant.RestaurantProps
 
-class RestaurantListAdapter : ListAdapter<RestaurantProps, RestaurantListAdapter.RestaurantViewHolder>(DIFF_CALLBACK){
+class SearchFilterAdapter : ListAdapter<RestaurantProps, SearchFilterAdapter.RestaurantViewHolder>(DIFF_CALLBACK){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RestaurantViewHolder {
 
-        val binding = ItemRestaurantsBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        val binding = VerticalRestaurantItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return RestaurantViewHolder(binding)
     }
 
-    class RestaurantViewHolder(private val binding: ItemRestaurantsBinding) : RecyclerView.ViewHolder(binding.root) {
+    class RestaurantViewHolder(private val binding: VerticalRestaurantItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(restaurant : RestaurantProps){
-            binding.itemRestaurantsName.text = restaurant.name
-            binding.itemRestaurantsLoc.text = restaurant.cuisine
+            binding.txtVertRest.text = restaurant.name
+            binding.txtVertCuisine.text = restaurant.cuisine
 
             Glide.with(binding.root)
                 .load(restaurant.imageUrl)
-                .into(binding.itemRestaurantsPhoto)
+                .into(binding.imgVertRest)
         }
     }
 

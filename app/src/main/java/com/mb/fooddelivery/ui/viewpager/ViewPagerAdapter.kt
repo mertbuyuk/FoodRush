@@ -1,4 +1,4 @@
-package com.mb.fooddelivery.ui.mainpage.viewpager
+package com.mb.fooddelivery.ui.viewpager
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

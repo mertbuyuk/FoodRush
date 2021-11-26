@@ -1,0 +1,45 @@
+package com.mb.fooddelivery.ui.restaurantmeals
+
+import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModel
+import com.mb.fooddelivery.databinding.FragmentRestaurantMealBinding
+import com.mb.fooddelivery.model.data.meals.MealProps
+import com.mb.fooddelivery.utils.Resource
+import dagger.hilt.android.AndroidEntryPoint
+
+@AndroidEntryPoint
+class RestaurantMealFragment : Fragment() {
+    private lateinit var binding : FragmentRestaurantMealBinding
+    private val adapter = MealListAdapter()
+    private val viewModel : MealsViewModel by viewModels()
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = FragmentRestaurantMealBinding.inflate(layoutInflater,container,false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.mealRecycler.adapter = adapter
+
+        viewModel.getMeals(2).observe(viewLifecycleOwner,
+            {
+                when(it.status){
+                    Resource.Status.SUCCESS -> onSucces(it.data?.mealList)
+                }
+            })
+    }
+
+    private fun onSucces(mealList: List<MealProps>?) {
+        adapter.submitList(mealList)
+    }
+}
