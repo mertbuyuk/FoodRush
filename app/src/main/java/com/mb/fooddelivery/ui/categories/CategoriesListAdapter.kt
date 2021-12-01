@@ -9,20 +9,8 @@ import com.mb.fooddelivery.databinding.ItemCategoriesBinding
 import com.mb.fooddelivery.model.data.categories.CategoriesCuisine
 
 class CategoriesListAdapter : ListAdapter<CategoriesCuisine,CategoriesListAdapter.CategoryHolder>(DIFF_CALLBACK) {
-  /*  val categories = listOf(
-        CategoriesCuisine("Pizza"),
-        CategoriesCuisine("Burger"),
-        CategoriesCuisine("Bakery"),
-        CategoriesCuisine("Dessert"),
-        CategoriesCuisine("Worldwide"),
-        CategoriesCuisine("Homemade"),
-        CategoriesCuisine("Breakfast"),
-        CategoriesCuisine("Kebab"),
-        CategoriesCuisine("Pasta - Salad"),
-        CategoriesCuisine("Doner"),
-        CategoriesCuisine("Seafood"),
-        CategoriesCuisine("Eastern Kitchen"),
-    )*/
+
+    private var onClickI : ICategoryOnClick? = null
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -35,15 +23,21 @@ class CategoriesListAdapter : ListAdapter<CategoriesCuisine,CategoriesListAdapte
 
     class CategoryHolder(private val binding: ItemCategoriesBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(categoriesCuisine: CategoriesCuisine){
+        fun bind(categoriesCuisine: CategoriesCuisine, onClickI: ICategoryOnClick?){
             binding.itemTextCategories.text = categoriesCuisine.name
+
+            itemView.setOnClickListener {
+                onClickI?.onClick(categoriesCuisine)
+            }
         }
     }
 
-
+    fun addListener(onClickI: ICategoryOnClick?){
+        this.onClickI = onClickI
+    }
 
     override fun onBindViewHolder(holder: CategoryHolder, position: Int) {
-        holder.bind(getItem(position))
+        holder.bind(getItem(position),onClickI)
     }
 
     companion object {

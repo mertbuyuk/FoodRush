@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.mb.fooddelivery.databinding.FragmentRestaurantSearchBinding
 import com.mb.fooddelivery.model.data.restaurant.RestaurantProps
@@ -46,7 +47,21 @@ class RestaurantSearchFragment : Fragment() {
             }
 
         })
+
+        initListener()
     }
+
+    private fun initListener() {
+
+        restaurantAdapter.addListener(object : IOnClick{
+            override fun onClick(item: RestaurantProps) {
+                val action = RestaurantSearchFragmentDirections.actionRestaurantSearchFragmentToRestaurantMealFragment(item.id)
+                findNavController().navigate(action)
+            }
+
+        })
+    }
+
 
     private fun searchEvent(text: String) {
          if (text.isNullOrEmpty()){

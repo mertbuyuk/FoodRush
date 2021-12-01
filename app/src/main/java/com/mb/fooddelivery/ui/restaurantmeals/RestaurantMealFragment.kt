@@ -1,12 +1,14 @@
 package com.mb.fooddelivery.ui.restaurantmeals
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
+import androidx.navigation.fragment.navArgs
 import com.mb.fooddelivery.databinding.FragmentRestaurantMealBinding
 import com.mb.fooddelivery.model.data.meals.MealProps
 import com.mb.fooddelivery.utils.Resource
@@ -17,6 +19,7 @@ class RestaurantMealFragment : Fragment() {
     private lateinit var binding : FragmentRestaurantMealBinding
     private val adapter = MealListAdapter()
     private val viewModel : MealsViewModel by viewModels()
+    private val args : RestaurantMealFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,7 +34,7 @@ class RestaurantMealFragment : Fragment() {
 
         binding.mealRecycler.adapter = adapter
 
-        viewModel.getMeals(2).observe(viewLifecycleOwner,
+        viewModel.getMeals(args.restaurantId).observe(viewLifecycleOwner,
             {
                 when(it.status){
                     Resource.Status.SUCCESS -> onSucces(it.data?.mealList)

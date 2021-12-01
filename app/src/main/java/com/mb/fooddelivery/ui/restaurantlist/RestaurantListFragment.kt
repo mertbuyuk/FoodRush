@@ -13,6 +13,7 @@ import com.mb.fooddelivery.model.data.categories.CategoriesCuisine
 import com.mb.fooddelivery.model.data.categories.getCuisineList
 import com.mb.fooddelivery.model.data.restaurant.RestaurantProps
 import com.mb.fooddelivery.ui.categories.CategoriesListAdapter
+import com.mb.fooddelivery.ui.categories.ICategoryOnClick
 import com.mb.fooddelivery.ui.viewpager.ViewPagerAdapter
 import com.mb.fooddelivery.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
@@ -43,11 +44,28 @@ class RestaurantListFragment : Fragment() {
         initViewPager()
         getRestaurantList()
         getCategories()
+        initClickListeners()
 
         binding.searchView.setOnClickListener {
             val action = RestaurantListFragmentDirections.actionRestaurantListFragmentToRestaurantSearchFragment(viewModel.restaurantList!!.toTypedArray())
             findNavController().navigate(action)
         }
+    }
+
+    private fun initClickListeners() {
+        restaurantAdapter.addListener(object : IOnClick{
+            override fun onClick(item: RestaurantProps) {
+                val action = RestaurantListFragmentDirections.actionRestaurantListFragmentToRestaurantMealFragment(item.id)
+                findNavController().navigate(action)
+            }
+        })
+
+        categoryAdapter.addListener(object  : ICategoryOnClick{
+            override fun onClick(category: CategoriesCuisine) {
+                //TODO
+            }
+
+        })
     }
 
     private fun initViewPager() {
@@ -78,4 +96,6 @@ class RestaurantListFragment : Fragment() {
         restaurantAdapter.submitList(restaurantList)
         viewModel.restaurantList = restaurantList
     }
+
+
 }

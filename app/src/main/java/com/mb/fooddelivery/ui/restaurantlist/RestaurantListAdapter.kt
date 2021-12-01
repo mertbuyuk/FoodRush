@@ -12,6 +12,8 @@ import com.mb.fooddelivery.model.data.restaurant.RestaurantProps
 
 class RestaurantListAdapter : ListAdapter<RestaurantProps, RestaurantListAdapter.RestaurantViewHolder>(DIFF_CALLBACK){
 
+    private var click  : IOnClick? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RestaurantViewHolder {
 
         val binding = ItemRestaurantsBinding.inflate(LayoutInflater.from(parent.context),parent,false)
@@ -20,7 +22,7 @@ class RestaurantListAdapter : ListAdapter<RestaurantProps, RestaurantListAdapter
 
     class RestaurantViewHolder(private val binding: ItemRestaurantsBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(restaurant : RestaurantProps){
+        fun bind(restaurant : RestaurantProps,click:IOnClick?){
             binding.itemRestaurantsName.text = restaurant.name
             binding.itemRestaurantsLoc.text = restaurant.cuisine
 
@@ -29,16 +31,18 @@ class RestaurantListAdapter : ListAdapter<RestaurantProps, RestaurantListAdapter
                 .into(binding.itemRestaurantsPhoto)
 
             itemView.setOnClickListener {
-                val navController = Navigation.findNavController(itemView)
-                val action = RestaurantListFragmentDirections.actionRestaurantListFragmentToRestaurantMealFragment()
-                navController.navigate(action)
+                click?.onClick(restaurant)
             }
         }
     }
 
 
     override fun onBindViewHolder(holder: RestaurantViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        holder.bind(getItem(position),click)
+    }
+
+    fun addListener(click: IOnClick?) {
+        this.click = click
     }
 
     companion object {

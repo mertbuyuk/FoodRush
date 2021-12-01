@@ -41,5 +41,9 @@
         android:id="@+id/restaurantMealFragment"
         android:name="com.mb.fooddelivery.ui.restaurantmeals.RestaurantMealFragment"
         android:label="fragment_restaurant_meal"
-        tools:layout="@layout/fragment_restaurant_meal" />
+        tools:layout="@layout/fragment_restaurant_meal" >
+        <argument
+            android:name="restaurantId"
+            app:argType="integer" />
+    </fragment>
 </navigation>

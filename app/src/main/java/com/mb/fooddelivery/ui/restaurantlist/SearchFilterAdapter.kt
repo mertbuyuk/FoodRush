@@ -11,6 +11,8 @@ import com.mb.fooddelivery.model.data.restaurant.RestaurantProps
 
 class SearchFilterAdapter : ListAdapter<RestaurantProps, SearchFilterAdapter.RestaurantViewHolder>(DIFF_CALLBACK){
 
+    private var onClick : IOnClick? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RestaurantViewHolder {
 
         val binding = VerticalRestaurantItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
@@ -19,19 +21,26 @@ class SearchFilterAdapter : ListAdapter<RestaurantProps, SearchFilterAdapter.Res
 
     class RestaurantViewHolder(private val binding: VerticalRestaurantItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(restaurant : RestaurantProps){
+        fun bind(restaurant: RestaurantProps, onClick: IOnClick?){
             binding.txtVertRest.text = restaurant.name
             binding.txtVertCuisine.text = restaurant.cuisine
 
             Glide.with(binding.root)
                 .load(restaurant.imageUrl)
                 .into(binding.imgVertRest)
+
+            itemView.setOnClickListener {
+                onClick?.onClick(restaurant)
+            }
         }
     }
 
+    fun addListener(onClick: IOnClick?){
+        this.onClick = onClick
+    }
 
     override fun onBindViewHolder(holder: RestaurantViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        holder.bind(getItem(position),onClick)
     }
 
     companion object {
