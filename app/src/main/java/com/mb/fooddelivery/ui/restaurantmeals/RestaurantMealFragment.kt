@@ -10,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.bumptech.glide.Glide
 import com.mb.fooddelivery.databinding.FragmentRestaurantMealBinding
 import com.mb.fooddelivery.model.data.meals.MealProps
 import com.mb.fooddelivery.utils.Resource
@@ -37,14 +38,26 @@ class RestaurantMealFragment : Fragment() {
 
         getMeals()
         clickListeners()
+        fillRestİnfos()
 
 
+    }
+
+    private fun fillRestİnfos() {
+        binding.apply {
+            Glide.with(root)
+                .load(args.restaurantProps?.imageUrl)
+                .fitCenter()
+                .into(imgRestaurant)
+
+            txtRestaurantName.text = args.restaurantProps?.name
+        }
     }
 
     private fun clickListeners() {
         adapter.addListener(object : IMealOnClick{
             override fun mealClick(meal: MealProps) {
-                val action = RestaurantMealFragmentDirections.actionRestaurantMealFragmentToMealDetailsFragment(meal.id)
+                val action = RestaurantMealFragmentDirections.actionRestaurantMealFragmentToMealDetailsFragment(meal.id,args.restaurantProps!!)
                 findNavController().navigate(action)
             }
 
@@ -52,7 +65,7 @@ class RestaurantMealFragment : Fragment() {
     }
 
     private fun getMeals(){
-        viewModel.getMeals(args.restaurantId).observe(viewLifecycleOwner,
+        viewModel.getMeals(args.restaurantProps!!.id).observe(viewLifecycleOwner,
             {
                 when(it.status){
                     Resource.Status.SUCCESS -> onSucces(it.data?.mealList)
@@ -64,5 +77,5 @@ class RestaurantMealFragment : Fragment() {
         adapter.submitList(mealList)
     }
 
-   // private fun onClickMealDirect()
+
 }

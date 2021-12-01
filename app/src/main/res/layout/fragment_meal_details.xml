@@ -20,8 +20,9 @@
 
     <TextView
         android:id="@+id/txtMealDetailDesc"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="start"
         app:layout_constraintBottom_toTopOf="@+id/recyclerViewIngre"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,11 +30,13 @@
         tools:text="400 grams of pizza, one slice of which is filled with mozzarella, sausage, sausage, pepperoni prepared according to our special recipe, and consisting of two layers of special Sbarro dough with romano cheese, thyme and parsley!, price=58, ingredients=[pepperoni, mozzarella cheese, romano cheese, mushrooms, pizza sauce])
 " />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnaddToCart"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="@string/add_to_cart"
+        android:textAllCaps="false"
+        android:background="@drawable/btn_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

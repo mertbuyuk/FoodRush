@@ -43,11 +43,13 @@
         android:label="fragment_restaurant_meal"
         tools:layout="@layout/fragment_restaurant_meal" >
         <argument
-            android:name="restaurantId"
-            app:argType="integer" />
+            android:name="restaurantProps"
+            app:argType="com.mb.fooddelivery.model.data.restaurant.RestaurantProps"
+            app:nullable="true" />
         <action
             android:id="@+id/action_restaurantMealFragment_to_mealDetailsFragment"
             app:destination="@id/mealDetailsFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/mealDetailsFragment"
@@ -56,5 +58,12 @@
         <argument
             android:name="mealId"
             app:argType="integer" />
+
+        <argument
+            android:name="restaurantProps"
+            app:argType="com.mb.fooddelivery.model.data.restaurant.RestaurantProps" />
+        <action
+            android:id="@+id/action_mealDetailsFragment_to_restaurantMealFragment"
+            app:destination="@id/restaurantMealFragment" />
     </fragment>
 </navigation>

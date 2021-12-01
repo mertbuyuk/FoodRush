@@ -6,11 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
-import com.mb.fooddelivery.R
 import com.mb.fooddelivery.databinding.FragmentMealDetailsBinding
+import com.mb.fooddelivery.model.data.cart.RestaurantInfo
 import com.mb.fooddelivery.model.data.meals.details.DetailMeal
 import com.mb.fooddelivery.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
@@ -34,7 +36,28 @@ class MealDetailsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         getMealDetails()
+
+        binding.apply {
+            btnaddToCart.setOnClickListener {
+                addRequest()
+            }
+        }
     }
+
+    private fun addRequest() {
+        viewModel.addToCart(navArgs.mealId,1).observe(viewLifecycleOwner,{
+             when(it.status){
+                 Resource.Status.SUCCESS -> navigateToRestaurant()
+             }
+        })
+    }
+
+    private fun navigateToRestaurant() {
+        val action = MealDetailsFragmentDirections.actionMealDetailsFragmentToRestaurantMealFragment(navArgs.restaurantProps)
+        findNavController().navigate(action)
+        Toast.makeText(requireContext(), "Added", Toast.LENGTH_LONG).show()
+    }
+
 
     private fun getMealDetails() {
 

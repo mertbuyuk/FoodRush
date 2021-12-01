@@ -10,4 +10,6 @@ import javax.inject.Inject
 class MealDetailViewModel @Inject constructor (private val apiRepository: ApiRepository) : ViewModel() {
 
     fun getMealDetail(id : Int) = apiRepository.getMealDetail(id)
+
+    fun addToCart(id: Int, count : Int) = apiRepository.addToCart(id,count)
 }

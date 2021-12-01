@@ -55,7 +55,7 @@ class RestaurantSearchFragment : Fragment() {
 
         restaurantAdapter.addListener(object : IOnClick{
             override fun onClick(item: RestaurantProps) {
-                val action = RestaurantSearchFragmentDirections.actionRestaurantSearchFragmentToRestaurantMealFragment(item.id)
+                val action = RestaurantSearchFragmentDirections.actionRestaurantSearchFragmentToRestaurantMealFragment(item)
                 findNavController().navigate(action)
             }
 

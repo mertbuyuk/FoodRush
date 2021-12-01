@@ -55,7 +55,7 @@ class RestaurantListFragment : Fragment() {
     private fun initClickListeners() {
         restaurantAdapter.addListener(object : IOnClick{
             override fun onClick(item: RestaurantProps) {
-                val action = RestaurantListFragmentDirections.actionRestaurantListFragmentToRestaurantMealFragment(item.id)
+                val action = RestaurantListFragmentDirections.actionRestaurantListFragmentToRestaurantMealFragment(item)
                 findNavController().navigate(action)
             }
         })
