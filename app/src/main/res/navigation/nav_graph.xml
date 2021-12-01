@@ -45,5 +45,16 @@
         <argument
             android:name="restaurantId"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_restaurantMealFragment_to_mealDetailsFragment"
+            app:destination="@id/mealDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mealDetailsFragment"
+        android:name="com.mb.fooddelivery.ui.mealdetails.MealDetailsFragment"
+        android:label="MealDetailsFragment" >
+        <argument
+            android:name="mealId"
+            app:argType="integer" />
     </fragment>
 </navigation>

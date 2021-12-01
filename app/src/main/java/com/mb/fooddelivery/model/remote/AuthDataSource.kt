@@ -10,4 +10,8 @@ class AuthDataSource @Inject constructor(private val apiService: AuthApiService)
     suspend fun getRestaurantMeals(id : Int) = getResult {
         apiService.getRestaurantMeals(id)
     }
+
+    suspend fun getMealDetail(id : Int) = getResult {
+        apiService.getMealDetail(id)
+    }
 }

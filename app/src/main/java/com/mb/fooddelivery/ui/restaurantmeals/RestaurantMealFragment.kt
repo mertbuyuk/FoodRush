@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.mb.fooddelivery.databinding.FragmentRestaurantMealBinding
 import com.mb.fooddelivery.model.data.meals.MealProps
@@ -34,6 +35,23 @@ class RestaurantMealFragment : Fragment() {
 
         binding.mealRecycler.adapter = adapter
 
+        getMeals()
+        clickListeners()
+
+
+    }
+
+    private fun clickListeners() {
+        adapter.addListener(object : IMealOnClick{
+            override fun mealClick(meal: MealProps) {
+                val action = RestaurantMealFragmentDirections.actionRestaurantMealFragmentToMealDetailsFragment(meal.id)
+                findNavController().navigate(action)
+            }
+
+        })
+    }
+
+    private fun getMeals(){
         viewModel.getMeals(args.restaurantId).observe(viewLifecycleOwner,
             {
                 when(it.status){
@@ -45,4 +63,6 @@ class RestaurantMealFragment : Fragment() {
     private fun onSucces(mealList: List<MealProps>?) {
         adapter.submitList(mealList)
     }
+
+   // private fun onClickMealDirect()
 }

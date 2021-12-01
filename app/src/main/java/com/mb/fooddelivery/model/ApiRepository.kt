@@ -30,4 +30,8 @@ class ApiRepository @Inject constructor(
     fun getRestaurantMeals(id : Int) = networkOperation(call = {
         authRemoteDataSource.getRestaurantMeals(id)
     })
+
+    fun getMealDetail(id: Int) = networkOperation(call = {
+        authRemoteDataSource.getMealDetail(id)
+    })
 }

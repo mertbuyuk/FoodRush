@@ -7,11 +7,12 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.mb.fooddelivery.databinding.ItemMealBinding
-import com.mb.fooddelivery.databinding.VerticalRestaurantItemBinding
 import com.mb.fooddelivery.model.data.meals.MealProps
-import com.mb.fooddelivery.model.data.restaurant.RestaurantProps
+import com.mb.fooddelivery.ui.restaurantlist.IOnClick
 
 class MealListAdapter : ListAdapter<MealProps, MealListAdapter.MealViewHolder>(DIFF_CALLBACK){
+
+    private lateinit var onClick : IMealOnClick
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MealViewHolder {
 
@@ -21,7 +22,7 @@ class MealListAdapter : ListAdapter<MealProps, MealListAdapter.MealViewHolder>(D
 
     class MealViewHolder(private val binding: ItemMealBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(meal : MealProps){
+        fun bind(meal: MealProps, onClick: IMealOnClick){
             binding.txtMealName.text = meal.name
             binding.txtMealDesc.text = meal.desc
             binding.txtMealPrice.text = meal.price.toString()
@@ -29,12 +30,20 @@ class MealListAdapter : ListAdapter<MealProps, MealListAdapter.MealViewHolder>(D
             Glide.with(binding.root)
                 .load(meal.imageUrl)
                 .into(binding.imgMeal)
+
+            itemView.setOnClickListener {
+                onClick.mealClick(meal)
+            }
         }
     }
 
 
     override fun onBindViewHolder(holder: MealViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        holder.bind(getItem(position),onClick)
+    }
+
+    fun addListener(onClick: IMealOnClick) {
+        this.onClick = onClick
     }
 
     companion object {
