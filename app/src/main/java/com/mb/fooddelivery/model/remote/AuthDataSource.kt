@@ -18,4 +18,8 @@ class AuthDataSource @Inject constructor(private val apiService: AuthApiService)
     suspend fun addToCart(id: Int,count : Int) = getResult {
         apiService.addToCart(id,count)
     }
+
+    suspend fun getCart() = getResult(call = {
+        apiService.getCart()
+    })
 }

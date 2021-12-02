@@ -23,4 +23,7 @@ interface AuthApiService {
 
     @PUT("rest/cart/add")
     suspend fun addToCart(@Query("meal_id") meal_id: Int, @Query("count") count: Int) : Response<CartResponse>
+
+    @GET("rest/cart")
+    suspend fun getCart() : Response<CartResponse>
 }

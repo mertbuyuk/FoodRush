@@ -4,6 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/loginFragment">
+
+    <action android:id="@+id/action_to_cart"
+        app:destination="@id/cartFragment"/>
+
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.mb.fooddelivery.ui.login.LoginFragment"
@@ -66,4 +70,9 @@
             android:id="@+id/action_mealDetailsFragment_to_restaurantMealFragment"
             app:destination="@id/restaurantMealFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.mb.fooddelivery.ui.cart.CartFragment"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" />
 </navigation>

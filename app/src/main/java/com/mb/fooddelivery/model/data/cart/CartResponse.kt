@@ -14,7 +14,7 @@ data class RestaurantInfo(
     @SerializedName("restaurantInfo")
     val restaurantInfo: RestaurantProps,
 
-    val mealInfoList : MealInfo,
+    val mealInfoList : List<MealInfo>,
 )
 
 data class MealInfo(
