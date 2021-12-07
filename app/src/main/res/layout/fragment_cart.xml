@@ -6,26 +6,126 @@
     android:layout_height="match_parent"
     tools:context=".ui.cart.CartFragment"
     android:padding="16dp"
+    android:background="#EDE6E6"
     >
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/orderDetails"
+        android:textColor="#09051C"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerViewCart"
+        app:layout_constraintStart_toStartOf="@+id/recyclerViewCart" />
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewCart"
-        android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="1dp"
-        tools:listitem="@layout/item_cart"
-        />
+        tools:listitem="@layout/item_cart" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="347dp"
+        android:layout_height="206dp"
+        app:cardCornerRadius="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/recyclerViewCart"
-        app:layout_constraintStart_toStartOf="@+id/recyclerViewCart" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#22CB84"
+            android:orientation="vertical"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_cart"
+                />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:background="@drawable/btn_cartbg"
+            android:text="Confirm Order"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:textColor="#15BE77"
+            android:layout_gravity="bottom|center"
+            android:layout_margin="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Meal Price"
+            android:textSize="16sp"
+            android:layout_marginTop="18dp"
+            android:layout_marginLeft="32dp"
+            android:textColor="#FBECEC" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delivery Charge"
+            android:textSize="16sp"
+            android:layout_marginTop="48dp"
+            android:layout_marginLeft="32dp"
+            android:textColor="#FBECEC" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Charge"
+            android:textSize="16sp"
+            android:layout_marginTop="100dp"
+            android:layout_marginLeft="32dp"
+            android:textColor="#FBECEC" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="15"
+            android:textSize="16sp"
+            android:layout_gravity="right"
+            android:layout_marginTop="18dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginLeft="32dp"
+            android:textColor="#FBECEC" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="15"
+            android:textSize="16sp"
+            android:layout_gravity="right"
+            android:layout_marginTop="48dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginLeft="32dp"
+            android:textColor="#FBECEC" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="30"
+            android:layout_marginRight="32dp"
+            android:textSize="16sp"
+            android:layout_gravity="right"
+            android:layout_marginTop="100dp"
+            android:layout_marginLeft="32dp"
+            android:textColor="#FBECEC" />
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

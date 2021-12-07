@@ -11,6 +11,10 @@ import androidx.navigation.fragment.findNavController
 import com.mb.fooddelivery.databinding.FragmentLoginBinding
 import com.mb.fooddelivery.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
+import androidx.appcompat.app.AppCompatActivity
+
+
+
 
 @AndroidEntryPoint
 class LoginFragment : Fragment() {
@@ -23,6 +27,7 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
         binding = FragmentLoginBinding.inflate(inflater,container,false)
         return binding.root
     }
@@ -33,6 +38,7 @@ class LoginFragment : Fragment() {
             loginRequest()
         }
     }
+
 
     private fun loginRequest() {
         binding.apply {

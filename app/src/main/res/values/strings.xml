@@ -8,6 +8,9 @@
     <string name="categories">Categories</string>
     <string name="restaurants">Restaurants</string>
     <string name="add_to_cart">Add to Cart</string>
+    <string name="loginmessage">Login To Your Account</string>
+    <string name="haventaccount">Don\'t Have an Account Yet? Click here.</string>
+    <string name="orderDetails">Order Details</string>
 
     <string-array name="Cuisines">
         <item>Pizza</item>

@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.mb.fooddelivery.R
@@ -37,6 +38,8 @@ class RestaurantListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        (activity as AppCompatActivity?)!!.supportActionBar!!.show()
 
         binding.recyclerRestaurants.adapter = restaurantAdapter
         binding.recyclerCategories.adapter = categoryAdapter

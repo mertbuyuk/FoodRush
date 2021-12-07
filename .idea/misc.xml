@@ -3,8 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/kentkart/Desktop/dvry/foodDelivery/app/src/main/res/drawable/bg_cart.xml" value="0.27708333333333335" />
+        <entry key="..\:/Users/kentkart/Desktop/dvry/foodDelivery/app/src/main/res/drawable/bg_login.xml" value="0.27708333333333335" />
+        <entry key="..\:/Users/kentkart/Desktop/dvry/foodDelivery/app/src/main/res/drawable/btn_background.xml" value="0.27708333333333335" />
+        <entry key="..\:/Users/kentkart/Desktop/dvry/foodDelivery/app/src/main/res/drawable/btn_cartbg.xml" value="0.27708333333333335" />
+        <entry key="..\:/Users/kentkart/Desktop/dvry/foodDelivery/app/src/main/res/drawable/btn_itemcart.xml" value="0.27708333333333335" />
+        <entry key="..\:/Users/kentkart/Desktop/dvry/foodDelivery/app/src/main/res/drawable/viewpager1.xml" value="0.27708333333333335" />
         <entry key="..\:/Users/kentkart/Desktop/dvry/foodDelivery/app/src/main/res/layout/activity_main.xml" value="0.2391304347826087" />
-        <entry key="..\:/Users/kentkart/Desktop/dvry/foodDelivery/app/src/main/res/layout/fragment_cart.xml" value="0.2391304347826087" />
+        <entry key="..\:/Users/kentkart/Desktop/dvry/foodDelivery/app/src/main/res/layout/fragment_cart.xml" value="0.33" />
+        <entry key="..\:/Users/kentkart/Desktop/dvry/foodDelivery/app/src/main/res/layout/fragment_login.xml" value="0.25" />
         <entry key="..\:/Users/kentkart/Desktop/dvry/foodDelivery/app/src/main/res/layout/item_cart.xml" value="0.22" />
         <entry key="..\:/Users/kentkart/Desktop/dvry/foodDelivery/app/src/main/res/menu/menu.xml" value="0.2609375" />
         <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/FoodDelivery/app/src/main/res/drawable/btn_background.xml" value="0.2890625" />
