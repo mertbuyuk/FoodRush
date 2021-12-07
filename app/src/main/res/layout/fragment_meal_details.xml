@@ -1,71 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:background="#EDE6E6"
     android:layout_height="match_parent"
     tools:context=".ui.mealdetails.MealDetailsFragment"
-    android:padding="16dp"
+
     >
 
 
     <ImageView
         android:id="@+id/imgMealDetail"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="220dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@tools:sample/avatars" />
+        tools:src="@tools:sample/avatars"
+        android:background="#EDE6E6"
+        />
 
-    <TextView
-        android:id="@+id/txtMealDetailDesc"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="start"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerViewIngre"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtMealNameDetail"
-        tools:text="400 grams of pizza, one slice of which is filled with mozzarella, sausage, sausage, pepperoni prepared according to our special recipe, and consisting of two layers of special Sbarro dough with romano cheese, thyme and parsley!, price=58, ingredients=[pepperoni, mozzarella cheese, romano cheese, mushrooms, pizza sauce])
+        android:layout_height="500dp"
+        app:layout_constraintTop_toBottomOf="@+id/imgMealDetail"
+        tools:layout_editor_absoluteX="16dp"
+        app:cardCornerRadius="42dp"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txtMealDetailDesc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="44dp"
+                android:gravity="start"
+                android:paddingLeft="18dp"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/recyclerViewIngre"
+                app:layout_constraintEnd_toEndOf="@+id/txtMealDetailPrice"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/txtMealNameDetail"
+                tools:text="400 grams of pizza, one slice of which is filled with mozzarella, sausage, sausage, pepperoni prepared according to our special recipe, and consisting of two layers of special Sbarro dough with romano cheese, thyme and parsley!, price=58, ingredients=[pepperoni, mozzarella cheese, romano cheese, mushrooms, pizza sauce])
 " />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnaddToCart"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/add_to_cart"
-        android:textAllCaps="false"
-        android:background="@drawable/btn_background"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnaddToCart"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="52dp"
+                android:background="@drawable/btn_background"
+                android:text="@string/add_to_cart"
+                android:textAllCaps="false"
+                android:layout_margin="8dp"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewIngre"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnaddToCart"
-        app:layout_constraintTop_toBottomOf="@+id/txtMealNameDetail"
-        app:layout_constraintVertical_bias="0.803"
-        tools:layout_editor_absoluteX="16dp" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewIngre"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:paddingLeft="18dp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="6"
+                app:layout_constraintBottom_toTopOf="@+id/btnaddToCart"
+                app:layout_constraintEnd_toEndOf="@+id/txtMealDetailPrice"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/txtMealNameDetail"
+                app:layout_constraintTop_toBottomOf="@+id/txtMealNameDetail"
+                app:layout_constraintVertical_bias="0.836" />
 
-    <TextView
-        android:id="@+id/txtMealNameDetail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="TextView"
-        android:layout_marginTop="24dp"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgMealDetail" />
+            <TextView
+                android:id="@+id/txtMealNameDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteY="39dp"
+                tools:text="TextView" />
 
-    <TextView
-        android:id="@+id/txtMealDetailPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@+id/txtMealNameDetail"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txtMealNameDetail" />
+            <TextView
+                android:id="@+id/txtMealDetailPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="28dp"
+                android:layout_marginTop="24dp"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/txtMealNameDetail"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/txtMealNameDetail"
+                app:layout_constraintVertical_bias="1.0"
+                tools:text="TextView" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
 import com.mb.fooddelivery.databinding.FragmentCartBinding
 import com.mb.fooddelivery.model.data.cart.RestaurantInfo
@@ -23,6 +24,7 @@ class CartFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
         binding = FragmentCartBinding.inflate(inflater,container,false)
         return binding.root
     }
