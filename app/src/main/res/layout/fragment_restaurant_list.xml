@@ -7,25 +7,40 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".ui.restaurantlist.RestaurantListFragment"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="#EDE6E6"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <TextView
+            android:layout_width="234dp"
+            android:layout_height="80dp"
+            android:text="@string/findFavorite"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginLeft="8dp"
+            />
+
     <androidx.appcompat.widget.SearchView
         android:id="@+id/searchView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/btn_background"
-        android:backgroundTint="#DAD5D5"
+        android:backgroundTint="#66E8BACB"
+        app:searchIcon="@drawable/ic_baseline_search_24"
+        android:layout_marginTop="16dp"
         />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager2"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="180dp"
+        android:layout_gravity="center"
         android:layout_marginTop="24dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:orientation="horizontal"
@@ -38,12 +53,13 @@
         android:textSize="16sp"
         android:textStyle="bold"
         android:layout_marginTop="16dp"
+        android:textColor="@color/black"
         />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerCategories"
         android:layout_width="match_parent"
-        android:layout_height="88dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:orientation="horizontal"
@@ -55,6 +71,7 @@
         android:layout_height="wrap_content"
         android:text="@string/restaurants"
         android:textSize="16sp"
+        android:textColor="@color/black"
         android:textStyle="bold"
         android:layout_marginTop="16dp"
         />

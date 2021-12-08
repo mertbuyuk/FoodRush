@@ -27,7 +27,9 @@ class SearchFilterAdapter : ListAdapter<RestaurantProps, SearchFilterAdapter.Res
 
             Glide.with(binding.root)
                 .load(restaurant.imageUrl)
+                .override(250,250)
                 .into(binding.imgVertRest)
+
 
             itemView.setOnClickListener {
                 onClick?.onClick(restaurant)

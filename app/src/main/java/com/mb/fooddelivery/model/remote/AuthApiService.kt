@@ -4,11 +4,10 @@ import com.mb.fooddelivery.model.data.cart.CartResponse
 import com.mb.fooddelivery.model.data.meals.MealList
 import com.mb.fooddelivery.model.data.meals.details.MealDetailResponse
 import com.mb.fooddelivery.model.data.restaurant.RestaurantListResponse
+import com.mb.fooddelivery.model.data.user.UserRequest
+import com.mb.fooddelivery.model.data.user.UserResponse
 import retrofit2.Response
-import retrofit2.http.GET
-import retrofit2.http.PUT
-import retrofit2.http.Path
-import retrofit2.http.Query
+import retrofit2.http.*
 
 interface AuthApiService {
 
@@ -26,4 +25,11 @@ interface AuthApiService {
 
     @GET("rest/cart")
     suspend fun getCart() : Response<CartResponse>
+
+    @GET("rest/user")
+    suspend fun getUserDetails() : Response<UserResponse>
+
+    @POST("rest/user/update")
+    suspend fun updateUserDetails(@Body request: UserRequest) : Response<UserResponse>
+
 }

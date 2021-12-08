@@ -39,8 +39,6 @@ class RestaurantListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        (activity as AppCompatActivity?)!!.supportActionBar!!.show()
-
         binding.recyclerRestaurants.adapter = restaurantAdapter
         binding.recyclerCategories.adapter = categoryAdapter
 

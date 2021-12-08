@@ -8,12 +8,26 @@
         <entry key="..\:/Users/kentkart/Desktop/dvry/foodDelivery/app/src/main/res/drawable/btn_background.xml" value="0.27708333333333335" />
         <entry key="..\:/Users/kentkart/Desktop/dvry/foodDelivery/app/src/main/res/drawable/btn_cartbg.xml" value="0.27708333333333335" />
         <entry key="..\:/Users/kentkart/Desktop/dvry/foodDelivery/app/src/main/res/drawable/btn_itemcart.xml" value="0.27708333333333335" />
+        <entry key="..\:/Users/kentkart/Desktop/dvry/foodDelivery/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.27708333333333335" />
+        <entry key="..\:/Users/kentkart/Desktop/dvry/foodDelivery/app/src/main/res/drawable/ic_buy.xml" value="0.27708333333333335" />
+        <entry key="..\:/Users/kentkart/Desktop/dvry/foodDelivery/app/src/main/res/drawable/ic_home.xml" value="0.15052083333333333" />
+        <entry key="..\:/Users/kentkart/Desktop/dvry/foodDelivery/app/src/main/res/drawable/ic_icon_profile.xml" value="0.27708333333333335" />
+        <entry key="..\:/Users/kentkart/Desktop/dvry/foodDelivery/app/src/main/res/drawable/vertical_item_background.xml" value="0.27708333333333335" />
         <entry key="..\:/Users/kentkart/Desktop/dvry/foodDelivery/app/src/main/res/drawable/viewpager1.xml" value="0.27708333333333335" />
         <entry key="..\:/Users/kentkart/Desktop/dvry/foodDelivery/app/src/main/res/layout/activity_main.xml" value="0.2391304347826087" />
         <entry key="..\:/Users/kentkart/Desktop/dvry/foodDelivery/app/src/main/res/layout/fragment_cart.xml" value="0.33" />
         <entry key="..\:/Users/kentkart/Desktop/dvry/foodDelivery/app/src/main/res/layout/fragment_login.xml" value="0.25" />
         <entry key="..\:/Users/kentkart/Desktop/dvry/foodDelivery/app/src/main/res/layout/fragment_meal_details.xml" value="0.2391304347826087" />
+        <entry key="..\:/Users/kentkart/Desktop/dvry/foodDelivery/app/src/main/res/layout/fragment_restaurant_list.xml" value="0.2341485507246377" />
+        <entry key="..\:/Users/kentkart/Desktop/dvry/foodDelivery/app/src/main/res/layout/fragment_restaurant_meal.xml" value="0.2341485507246377" />
+        <entry key="..\:/Users/kentkart/Desktop/dvry/foodDelivery/app/src/main/res/layout/fragment_restaurant_search.xml" value="0.2341485507246377" />
+        <entry key="..\:/Users/kentkart/Desktop/dvry/foodDelivery/app/src/main/res/layout/fragment_user.xml" value="0.22871376811594202" />
         <entry key="..\:/Users/kentkart/Desktop/dvry/foodDelivery/app/src/main/res/layout/item_cart.xml" value="0.22" />
+        <entry key="..\:/Users/kentkart/Desktop/dvry/foodDelivery/app/src/main/res/layout/item_categories.xml" value="0.33" />
+        <entry key="..\:/Users/kentkart/Desktop/dvry/foodDelivery/app/src/main/res/layout/item_meal.xml" value="0.2341485507246377" />
+        <entry key="..\:/Users/kentkart/Desktop/dvry/foodDelivery/app/src/main/res/layout/item_restaurants.xml" value="0.25" />
+        <entry key="..\:/Users/kentkart/Desktop/dvry/foodDelivery/app/src/main/res/layout/vertical_restaurant_item.xml" value="0.2341485507246377" />
+        <entry key="..\:/Users/kentkart/Desktop/dvry/foodDelivery/app/src/main/res/menu/bottom_nav.xml" value="0.2609375" />
         <entry key="..\:/Users/kentkart/Desktop/dvry/foodDelivery/app/src/main/res/menu/menu.xml" value="0.2609375" />
         <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/FoodDelivery/app/src/main/res/drawable/btn_background.xml" value="0.2890625" />
         <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/FoodDelivery/app/src/main/res/drawable/layout_background.xml" value="0.2890625" />

@@ -26,8 +26,6 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
         binding = FragmentLoginBinding.inflate(inflater,container,false)
         return binding.root
     }
@@ -53,7 +51,7 @@ class LoginFragment : Fragment() {
                     }
                     Resource.Status.SUCCESS ->{
                         Log.i("Mert","Başarılı")
-                        val action = LoginFragmentDirections.actionLoginFragmentToRestaurantListFragment()
+                        val action = LoginFragmentDirections.globalHome()
                         findNavController().navigate(action)
                     }
                     Resource.Status.ERROR ->{

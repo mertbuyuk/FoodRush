@@ -1,6 +1,7 @@
 package com.mb.fooddelivery.model
 
 import com.mb.fooddelivery.model.data.login.LoginRequest
+import com.mb.fooddelivery.model.data.user.UserRequest
 import com.mb.fooddelivery.model.local.LocalDataSource
 import com.mb.fooddelivery.model.remote.AuthDataSource
 import com.mb.fooddelivery.model.remote.RemoteDataSource
@@ -41,5 +42,13 @@ class ApiRepository @Inject constructor(
 
     fun getCart() = networkOperation(call = {
         authRemoteDataSource.getCart()
+    })
+
+    fun getUser() = networkOperation(call = {
+        authRemoteDataSource.getUser()
+    })
+
+    fun updateUser(userRequest: UserRequest) = networkOperation(call = {
+        authRemoteDataSource.editUser(userRequest)
     })
 }

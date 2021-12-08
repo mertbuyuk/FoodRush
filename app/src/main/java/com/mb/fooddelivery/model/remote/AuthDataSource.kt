@@ -1,5 +1,6 @@
 package com.mb.fooddelivery.model.remote
 
+import com.mb.fooddelivery.model.data.user.UserRequest
 import com.mb.fooddelivery.utils.BaseDataSource
 import javax.inject.Inject
 
@@ -22,4 +23,12 @@ class AuthDataSource @Inject constructor(private val apiService: AuthApiService)
     suspend fun getCart() = getResult(call = {
         apiService.getCart()
     })
+
+    suspend fun getUser() = getResult(call = {
+        apiService.getUserDetails()
+    })
+
+    suspend fun editUser(userRequest: UserRequest) = getResult(call ={
+        apiService.updateUserDetails(userRequest)})
+
 }

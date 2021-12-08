@@ -23,8 +23,6 @@ class CartFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
         binding = FragmentCartBinding.inflate(inflater,container,false)
         return binding.root
     }

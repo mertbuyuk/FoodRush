@@ -11,6 +11,11 @@
     <string name="loginmessage">Login To Your Account</string>
     <string name="haventaccount">Don\'t Have an Account Yet? Click here.</string>
     <string name="orderDetails">Order Details</string>
+    <string name="Home">Home</string>
+    <string name="cart">Cart</string>
+    <string name="profile">Profile</string>
+    <string name="search">Search</string>
+    <string name="findFavorite">Find Your Favorite Food</string>
 
     <string-array name="Cuisines">
         <item>Pizza</item>
