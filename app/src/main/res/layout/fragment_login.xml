@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.login.LoginFragment"
-    android:orientation="vertical"
-    android:padding="10dp"
-    android:paddingLeft="30dp"
-    android:paddingRight="30dp"
-    android:background="@drawable/bg_login"
-    android:gravity="top"
     >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".ui.login.LoginFragment"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:background="@drawable/bg_login"
+        android:gravity="top"
+        >
 
     <ImageView
         android:layout_width="188dp"
@@ -96,6 +101,7 @@
 
     <TextView
         android:id="@+id/signUpText"
+        android:clickable="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/haventaccount"
@@ -104,7 +110,5 @@
         android:layout_marginTop="30dp"
         android:textColor="#8F8989"
         />
-
-
-
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>

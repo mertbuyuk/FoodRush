@@ -16,6 +16,12 @@
     <string name="profile">Profile</string>
     <string name="search">Search</string>
     <string name="findFavorite">Find Your Favorite Food</string>
+    <string name="name">Name</string>
+    <string name="surname">Surname</string>
+    <string name="email">Email</string>
+    <string name="adress">Adress</string>
+    <string name="phone">Phone</string>
+    <string name="update">Update</string>
 
     <string-array name="Cuisines">
         <item>Pizza</item>
