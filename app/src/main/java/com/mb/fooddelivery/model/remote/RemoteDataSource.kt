@@ -1,6 +1,7 @@
 package com.mb.fooddelivery.model.remote
 
 import com.mb.fooddelivery.model.data.login.LoginRequest
+import com.mb.fooddelivery.model.data.signup.SignupRequest
 import com.mb.fooddelivery.utils.BaseDataSource
 import javax.inject.Inject
 
@@ -8,5 +9,9 @@ import javax.inject.Inject
 class RemoteDataSource @Inject constructor (private val apiService: FoodApiService)  : BaseDataSource(){
     suspend fun loginRequest(request: LoginRequest) = getResult {
         apiService.login(request)
+    }
+
+    suspend fun signUpRequest(request: SignupRequest) = getResult {
+        apiService.register(request)
     }
 }

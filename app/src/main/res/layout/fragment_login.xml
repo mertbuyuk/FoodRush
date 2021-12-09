@@ -98,17 +98,18 @@
         android:layout_gravity="center_horizontal"
         />
 
-
-    <TextView
-        android:id="@+id/signUpText"
-        android:clickable="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/haventaccount"
-        android:textSize="16sp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        android:textColor="#8F8989"
-        />
+        <Button
+            android:id="@+id/signUpText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:text="@string/haventaccount"
+            android:textSize="12sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:textColor="#8F8989"
+            android:clickable="true"
+            android:focusable="true"
+            />
     </LinearLayout>
 </ScrollView>

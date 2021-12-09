@@ -12,8 +12,7 @@ import com.mb.fooddelivery.databinding.FragmentLoginBinding
 import com.mb.fooddelivery.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
 import androidx.appcompat.app.AppCompatActivity
-
-
+import com.mb.fooddelivery.R
 
 
 @AndroidEntryPoint
@@ -34,9 +33,19 @@ class LoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.loginBtn.setOnClickListener{
             loginRequest()
+
+            binding.apply {
+                signUpText.setOnClickListener {
+                    navigate()
+                }
+            }
         }
     }
 
+    private fun navigate() {
+        findNavController().navigate(R.id.action_hilt_LoginFragment_to_signupFragment)
+        Log.i("Mert","clicked")
+    }
 
     private fun loginRequest() {
         binding.apply {

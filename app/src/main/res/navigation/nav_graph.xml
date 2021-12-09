@@ -84,4 +84,21 @@
         android:name="com.mb.fooddelivery.ui.user.UserFragment"
         android:label="fragment_user"
         tools:layout="@layout/fragment_user" />
+    <fragment
+        android:id="@+id/signupFragment"
+        android:name="com.mb.fooddelivery.ui.signup.SignupFragment"
+        android:label="fragment_signup"
+        tools:layout="@layout/fragment_signup" >
+        <action
+            android:id="@+id/action_signupFragment_to_hilt_LoginFragment"
+            app:destination="@id/hilt_LoginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/hilt_LoginFragment"
+        android:name="com.mb.fooddelivery.ui.login.Hilt_LoginFragment"
+        android:label="Hilt_LoginFragment" >
+        <action
+            android:id="@+id/action_hilt_LoginFragment_to_signupFragment"
+            app:destination="@id/signupFragment" />
+    </fragment>
 </navigation>

@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
 import com.mb.fooddelivery.model.data.login.LoginResponse
+import com.mb.fooddelivery.model.data.signup.SignupResponse
 import kotlinx.coroutines.Dispatchers
 
 fun <T> networkOperationAuth(call : suspend() -> Resource<T>, saveToken: (token : String) -> Unit) : LiveData<Resource<T>>{
@@ -16,6 +17,9 @@ fun <T> networkOperationAuth(call : suspend() -> Resource<T>, saveToken: (token 
             if (data is LoginResponse){
                 saveToken(data.responseBody.jwtToken)
             }
+            else if(data is SignupResponse){
+                    saveToken(data.registerData.jwtToken)
+                }
             emit(Resource.success(data))
         }
         else if (networkCall.status == Resource.Status.ERROR){

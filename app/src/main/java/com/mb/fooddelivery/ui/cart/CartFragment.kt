@@ -8,9 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.ItemTouchHelper
+import androidx.recyclerview.widget.RecyclerView
 import com.mb.fooddelivery.databinding.FragmentCartBinding
 import com.mb.fooddelivery.model.data.cart.RestaurantInfo
 import com.mb.fooddelivery.utils.Resource
+import com.mb.fooddelivery.utils.SwipetoDelete
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -32,6 +35,18 @@ class CartFragment : Fragment() {
 
         binding.recyclerViewCart.adapter = adapter
         getCart()
+        swipetoDelete()
+    }
+
+    private fun swipetoDelete() {
+        val swipetoDelete = object  : SwipetoDelete(requireContext()){
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                adapter.removeItem(viewHolder.adapterPosition)
+            }
+        }
+        val touchHelper = ItemTouchHelper(swipetoDelete)
+        touchHelper.attachToRecyclerView(binding.recyclerViewCart)
+
     }
 
     private fun getCart() {

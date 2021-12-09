@@ -1,6 +1,7 @@
 package com.mb.fooddelivery.model
 
 import com.mb.fooddelivery.model.data.login.LoginRequest
+import com.mb.fooddelivery.model.data.signup.SignupRequest
 import com.mb.fooddelivery.model.data.user.UserRequest
 import com.mb.fooddelivery.model.local.LocalDataSource
 import com.mb.fooddelivery.model.remote.AuthDataSource
@@ -18,6 +19,15 @@ class ApiRepository @Inject constructor(
     fun login(request: LoginRequest) = networkOperationAuth(
         call = {
             remoteDataSource.loginRequest(request)
+        },
+        saveToken = {
+            localDataSource.saveToken(it)
+        }
+    )
+
+    fun signup(request: SignupRequest) = networkOperationAuth(
+        call = {
+            remoteDataSource.signUpRequest(request)
         },
         saveToken = {
             localDataSource.saveToken(it)

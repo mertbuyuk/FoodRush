@@ -37,6 +37,12 @@ class CartAdapter : ListAdapter<MealInfo, CartAdapter.CartViewHolder>(DIFF_CALLB
         holder.bind(getItem(position))
     }
 
+    fun removeItem(position: Int){
+        val currentList =  currentList.toMutableList()
+        currentList.removeAt(position)
+        submitList(currentList)
+    }
+
     companion object {
         val DIFF_CALLBACK = object : DiffUtil.ItemCallback<MealInfo>() {
             override fun areItemsTheSame(oldItem: MealInfo, newItem: MealInfo) =

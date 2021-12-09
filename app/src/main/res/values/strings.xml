@@ -22,6 +22,9 @@
     <string name="adress">Adress</string>
     <string name="phone">Phone</string>
     <string name="update">Update</string>
+    <string name="signup">Sign up</string>
+    <string name="haveaccount">Already have? Login here.</string>
+    <string name="signupmessage">Get Ready to Food Rush!</string>
 
     <string-array name="Cuisines">
         <item>Pizza</item>

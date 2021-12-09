@@ -35,12 +35,15 @@
         <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/FoodDelivery/app/src/main/res/drawable/layout_background.xml" value="0.2890625" />
         <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/FoodDelivery/app/src/main/res/drawable/vertical_item_background.xml" value="0.2890625" />
         <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/activity_main.xml" value="0.18614130434782608" />
+        <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/fragment_cart.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/fragment_login.xml" value="0.25" />
         <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/fragment_meal_details.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/fragment_restaurant_detail.xml" value="0.19384057971014493" />
         <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/fragment_restaurant_list.xml" value="0.25" />
         <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/fragment_restaurant_meal.xml" value="0.25" />
         <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/fragment_restaurant_search.xml" value="0.19384057971014493" />
+        <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/fragment_signup.xml" value="0.25" />
+        <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/fragment_user.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/item_categories.xml" value="0.33" />
         <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/item_meal.xml" value="0.33" />
         <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/item_resphoto.xml" value="0.2223731884057971" />
@@ -50,7 +53,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
