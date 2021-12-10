@@ -33,17 +33,17 @@ class LoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.loginBtn.setOnClickListener{
             loginRequest()
+        }
 
-            binding.apply {
-                signUpText.setOnClickListener {
-                    navigate()
-                }
+        binding.apply {
+            signUpText.setOnClickListener {
+                navigate()
             }
         }
     }
 
     private fun navigate() {
-        findNavController().navigate(R.id.action_hilt_LoginFragment_to_signupFragment)
+        findNavController().navigate(R.id.action_loginFragment_to_signupFragment)
         Log.i("Mert","clicked")
     }
 

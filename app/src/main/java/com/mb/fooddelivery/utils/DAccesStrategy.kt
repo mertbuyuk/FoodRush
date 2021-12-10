@@ -17,9 +17,6 @@ fun <T> networkOperationAuth(call : suspend() -> Resource<T>, saveToken: (token 
             if (data is LoginResponse){
                 saveToken(data.responseBody.jwtToken)
             }
-            else if(data is SignupResponse){
-                    saveToken(data.registerData.jwtToken)
-                }
             emit(Resource.success(data))
         }
         else if (networkCall.status == Resource.Status.ERROR){

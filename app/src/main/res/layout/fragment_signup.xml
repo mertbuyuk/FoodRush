@@ -116,7 +116,7 @@
                     android:id="@+id/edtTxtEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/username"
+                    android:hint="@string/email"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     >
 
@@ -131,7 +131,7 @@
         </com.google.android.material.card.MaterialCardView>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/loginBtn"
+            android:id="@+id/signBtn"
             android:layout_width="150dp"
             android:layout_height="60dp"
             android:layout_marginTop="36dp"
@@ -145,7 +145,7 @@
             android:layout_gravity="center_horizontal"
             />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/LoginText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

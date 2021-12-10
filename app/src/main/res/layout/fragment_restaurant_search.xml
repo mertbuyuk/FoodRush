@@ -7,7 +7,7 @@
     tools:context=".ui.restaurantlist.RestaurantSearchFragment"
     android:padding="16dp"
     android:orientation="vertical"
-    android:background="#EDE6E6"
+    android:background="@drawable/bg_login"
     >
 
     <androidx.appcompat.widget.SearchView

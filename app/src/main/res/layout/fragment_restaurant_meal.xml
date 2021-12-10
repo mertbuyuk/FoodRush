@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.restaurantmeals.RestaurantMealFragment"
     android:padding="16dp"
-    android:background="#EDE6E6"
+    android:background="@drawable/bg_login"
     >
 
     <ImageView

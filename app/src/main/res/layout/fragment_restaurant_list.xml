@@ -8,7 +8,7 @@
     android:orientation="vertical"
     tools:context=".ui.restaurantlist.RestaurantListFragment"
     android:padding="16dp"
-    android:background="#EDE6E6"
+    android:background="@drawable/bg_login"
     >
 
     <LinearLayout

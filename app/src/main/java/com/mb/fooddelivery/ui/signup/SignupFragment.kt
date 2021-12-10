@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.mb.fooddelivery.R
@@ -29,16 +30,15 @@ class SignupFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        userRequest()
+        binding.signBtn.setOnClickListener { userRequest() }
 
         binding.LoginText.setOnClickListener {
             navigate()
-            Log.i("Mert","cşi,cked")
         }
     }
 
     private fun navigate() {
-        findNavController().navigate(R.id.action_signupFragment_to_hilt_LoginFragment)
+        findNavController().navigate(R.id.action_signupFragment_to_loginFragment)
         Log.i("Mert","cşi,cked")
     }
 
@@ -55,7 +55,8 @@ class SignupFragment : Fragment() {
             viewModel.signup(signupRequest).observe(viewLifecycleOwner,{
                 when(it.status){
                     Resource.Status.SUCCESS -> {
-                        findNavController().navigate(R.id.global_home)
+                        findNavController().navigate(R.id.action_signupFragment_to_loginFragment)
+                        Toast.makeText(requireContext(),"You can login now!",Toast.LENGTH_SHORT).show()
                     }
                 }
             })

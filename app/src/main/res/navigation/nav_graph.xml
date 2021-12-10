@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/splashFragment">
 
     <action android:id="@+id/action_to_cart"
         app:destination="@id/cartFragment"/>
@@ -19,6 +19,9 @@
         android:id="@+id/loginFragment"
         android:name="com.mb.fooddelivery.ui.login.LoginFragment"
         android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_signupFragment"
+            app:destination="@id/signupFragment" />
     </fragment>
     <fragment
         android:id="@+id/restaurantListFragment"
@@ -90,15 +93,19 @@
         android:label="fragment_signup"
         tools:layout="@layout/fragment_signup" >
         <action
-            android:id="@+id/action_signupFragment_to_hilt_LoginFragment"
-            app:destination="@id/hilt_LoginFragment" />
+            android:id="@+id/action_signupFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
-        android:id="@+id/hilt_LoginFragment"
-        android:name="com.mb.fooddelivery.ui.login.Hilt_LoginFragment"
-        android:label="Hilt_LoginFragment" >
+        android:id="@+id/splashFragment"
+        android:name="com.mb.fooddelivery.ui.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
         <action
-            android:id="@+id/action_hilt_LoginFragment_to_signupFragment"
-            app:destination="@id/signupFragment" />
+            android:id="@+id/action_splashFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_restaurantListFragment"
+            app:destination="@id/restaurantListFragment" />
     </fragment>
 </navigation>
