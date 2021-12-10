@@ -38,7 +38,7 @@ class SignupFragment : Fragment() {
     }
 
     private fun navigate() {
-        findNavController().navigate(R.id.action_signupFragment_to_loginFragment)
+        findNavController().navigate(R.id.action_signupFragment2_to_loginFragment2)
         Log.i("Mert","cşi,cked")
     }
 
@@ -55,7 +55,7 @@ class SignupFragment : Fragment() {
             viewModel.signup(signupRequest).observe(viewLifecycleOwner,{
                 when(it.status){
                     Resource.Status.SUCCESS -> {
-                        findNavController().navigate(R.id.action_signupFragment_to_loginFragment)
+                        findNavController().navigate(R.id.action_signupFragment2_to_loginFragment2)
                         Toast.makeText(requireContext(),"You can login now!",Toast.LENGTH_SHORT).show()
                     }
                 }

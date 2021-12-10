@@ -1,5 +1,6 @@
 package com.mb.fooddelivery.ui.login
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -13,6 +14,10 @@ import com.mb.fooddelivery.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
 import androidx.appcompat.app.AppCompatActivity
 import com.mb.fooddelivery.R
+import com.mb.fooddelivery.MainActivity
+
+
+
 
 
 @AndroidEntryPoint
@@ -43,7 +48,7 @@ class LoginFragment : Fragment() {
     }
 
     private fun navigate() {
-        findNavController().navigate(R.id.action_loginFragment_to_signupFragment)
+        findNavController().navigate(R.id.action_loginFragment2_to_signupFragment2)
         Log.i("Mert","clicked")
     }
 
@@ -59,9 +64,9 @@ class LoginFragment : Fragment() {
                         Log.i("Mert","Loading")
                     }
                     Resource.Status.SUCCESS ->{
-                        Log.i("Mert","Başarılı")
-                        val action = LoginFragmentDirections.globalHome()
-                        findNavController().navigate(action)
+                        val i = Intent(context, MainActivity::class.java)
+                        startActivity(i)
+                        requireActivity().finish()
                     }
                     Resource.Status.ERROR ->{
                         Log.i("Mert","Error")

@@ -33,11 +33,14 @@ class SplashFragment : Fragment() {
     private fun initAnim() {
         binding.splashAnim.addAnimatorListener(object : Animator.AnimatorListener{
             override fun onAnimationStart(p0: Animator?) {
-                Log.i("M","a")
+
             }
 
             override fun onAnimationEnd(p0: Animator?) {
-                  findNavController().navigate(R.id.action_splashFragment_to_loginFragment)
+                findNavController().navigate(R.id.action_splashFragment2_to_loginFragment2)
+                /*val intent = Intent(context, MainActivity::class.java)
+                startActivity(intent)
+                requireActivity().finish()*/
             }
 
             override fun onAnimationCancel(p0: Animator?) {
