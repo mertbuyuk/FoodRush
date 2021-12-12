@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/MB/Desktop/foodrush/foodDelivery/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/MB/Desktop/foodrush/foodDelivery/app/src/main/res/layout/fragment_login.xml" value="0.25" />
+        <entry key="..\:/Users/MB/Desktop/foodrush/foodDelivery/app/src/main/res/layout/fragment_signup.xml" value="0.22" />
         <entry key="..\:/Users/kentkart/Desktop/dvry/foodDelivery/app/src/main/res/drawable/bg_cart.xml" value="0.27708333333333335" />
         <entry key="..\:/Users/kentkart/Desktop/dvry/foodDelivery/app/src/main/res/drawable/bg_login.xml" value="0.27708333333333335" />
         <entry key="..\:/Users/kentkart/Desktop/dvry/foodDelivery/app/src/main/res/drawable/btn_background.xml" value="0.27708333333333335" />

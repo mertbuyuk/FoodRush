@@ -8,20 +8,23 @@ import android.view.*
 import android.view.View.SYSTEM_UI_FLAG_LAYOUT_STABLE
 import androidx.navigation.Navigation
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.mb.fooddelivery.databinding.ActivityMainBinding
+import com.mb.fooddelivery.utils.setStatusBarTransparent
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var bottomNav : BottomNavigationView
+    private lateinit var binding : ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         bottomNav = findViewById(R.id.bottomNavigationView)
-
         initBottomNavs()
+        setStatusBarTransparent(this,binding.root)
     }
 
 
